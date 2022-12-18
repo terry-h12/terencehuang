@@ -1,12 +1,14 @@
-import ThemePicker from "../components/ThemePicker";
+import SideBar from '../components/SideBar'
+import ThemePicker from '../components/ThemePicker'
 
-function HomePage() {
+function InfoPage() {
   return (
     <div className="w-screen h-screen bg-dracula-white text-2xl font-global text-dracula-black dark:bg-dracula-black dark:text-dracula-white">
-      This is the home page
+      Info Page
+      <SideBar />
       <ThemePicker />
     </div>
-  );
+  )
 }
 
-export default HomePage;
+export default InfoPage

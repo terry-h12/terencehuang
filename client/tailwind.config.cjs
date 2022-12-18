@@ -13,6 +13,11 @@ module.exports = {
       colors: {
         "dracula-white": "#f8f8f2",
         "dracula-black" : "#282a36",
+        "dracula-purple" : "#bd93f9",
+        "dracula-pink" : "#ff79c6",
+        "dracula-orange" : "#ffb86c",
+        "dracula-green" : "#50fa7b",
+        "dracula-cyan" : "##8be9fd",
       },
     },
   },

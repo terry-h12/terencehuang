@@ -4,14 +4,15 @@ function ThemePicker() {
   const [theme, setTheme] = useState<string | null>(null);
 
   useEffect(() => {
-    // Possible bug 
-    if (window.matchMedia("prefer-color-scheme: dark").matches) {
+    // Bug with Ubuntu and Chrome
+    if (window.matchMedia("(prefer-color-scheme: dark)").matches) {
       setTheme("dark");
     } else {
       setTheme("light");
     }
   }, []);
 
+  // Add or removes dark class for Tailwind
   useEffect(() => {
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
@@ -24,7 +25,7 @@ function ThemePicker() {
   const handleThemeChange = () => setTheme(theme === "dark" ? "light" : "dark");
 
   return (
-    <button onClick={handleThemeChange} className="bg-green-300 flex">
+    <button onClick={handleThemeChange} className="bg-dracula-green absolute bottom-5 right-5 h-10 w-18">
       {theme === "dark" ? "light" : "dark"}
     </button>
   );
