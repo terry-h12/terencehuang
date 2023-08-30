@@ -1,16 +1,12 @@
 import { useEffect, useState } from "react";
+import { DarkModeIcon, LightModeIcon } from "./Icons";
 
-function ThemePicker() {
-  const [theme, setTheme] = useState<string | null>(null);
-
-  useEffect(() => {
-    // Bug with Ubuntu and Chrome
-    if (window.matchMedia("(prefer-color-scheme: dark)").matches) {
-      setTheme("dark");
-    } else {
-      setTheme("light");
-    }
-  }, []);
+const ThemePicker = () => {
+  const [theme, setTheme] = useState<string>(() => {
+    // Ensures that the theme is persistant on different pages
+    const storedTheme = localStorage.getItem("theme");
+    return storedTheme !== null ? storedTheme : window.matchMedia("(prefer-color-scheme: dark)").matches ? "dark" : "light";
+  });
 
   // Add or removes dark class for Tailwind
   useEffect(() => {
@@ -19,14 +15,15 @@ function ThemePicker() {
     } else {
       document.documentElement.classList.remove("dark");
     }
+    localStorage.setItem("theme", theme);
   }, [theme]);
 
   // Toggles between dark and light mode
   const handleThemeChange = () => setTheme(theme === "dark" ? "light" : "dark");
 
   return (
-    <button onClick={handleThemeChange} className="bg-dracula-green absolute bottom-5 right-5 h-10 w-18">
-      {theme === "dark" ? "light" : "dark"}
+    <button onClick={handleThemeChange} className="absolute bottom-5 right-5 h-10 w-18">
+      {theme === "dark" ? <LightModeIcon /> : <DarkModeIcon />}
     </button>
   );
 }

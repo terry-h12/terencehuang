@@ -1,18 +1,17 @@
-import Project from "../components/Project";
 import SideBar from "../components/SideBar";
 import ThemePicker from "../components/ThemePicker";
-import { test } from "../constants/projects";
 
-
-const ProjectPage = () => {
+const HomePage = () => {
   return (
     <div className="w-screen h-screen bg-dracula-white text-2xl font-global text-dracula-black dark:bg-dracula-black dark:text-dracula-white">
-      Project Page
+      This is the home page
       <SideBar />
       <ThemePicker />
-      <Project projectDetails={test} />
+      <div className="m-auto w-96">
+        Hello, Welcome to Tez's website
+      </div>
     </div>
   );
 }
 
-export default ProjectPage;
+export default HomePage;

@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
 
-function SideBar() {
+const SideBar = () => {
   return (
     <div className="flex flex-col w-32">
       <Link to="/" className="bg-dracula-purple">
-        AboutMe
+        Home page
       </Link>
       <Link to="/projects" className="bg-dracula-pink">
         Projects
       </Link>
-      <Link to="/info" className="bg-dracula-orange">
-        Info
+      <Link to="/aboutMe" className="bg-dracula-orange">
+        About Me
       </Link>
     </div>
   );
