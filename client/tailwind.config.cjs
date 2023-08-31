@@ -19,6 +19,10 @@ module.exports = {
         "dracula-green" : "#50fa7b",
         "dracula-cyan" : "##8be9fd",
       },
+      margin: {
+        '40%': '40%',
+        '50%': '50%',
+      },
     },
   },
   plugins: [],

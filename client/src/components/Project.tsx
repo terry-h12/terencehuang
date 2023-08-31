@@ -1,5 +1,5 @@
 import { IProject } from "../interfaces/project";
-// import { LinkedIcon } from "./Icons";
+import { LinkedIcon } from "./Icons";
 
 interface ChildProps {
   projectDetails: IProject;
@@ -8,14 +8,14 @@ interface ChildProps {
 const Project = (props: ChildProps) => {
   const { projectDetails } = props;
   return (
-    <div className="m-auto w-96">
-      <p>Website: {projectDetails.website}</p>
-      {/* <LinkedIcon /> */}
-      <p>GitHub: {projectDetails.gitHubRepo}</p>
-      <p>Backend: {projectDetails.backendRepo}</p>
-      <p>Devpost: {projectDetails.devpost}</p>
-      {/* <p>Frontend: {projectDetails.website}</p> */}
-      
+    <div className="flex flex-col mb-10 text-xl ml-40%">
+      {projectDetails.name}
+      <div className="space-x-8 > *">
+        <LinkedIcon iconType="gitHub" link={projectDetails.gitHubRepo}/>
+        <LinkedIcon iconType="backend" link={projectDetails.backendRepo}/>
+        <LinkedIcon iconType="website" link={projectDetails.website}/>
+        <LinkedIcon iconType="devpost" link={projectDetails.devpost}/>
+      </div>
     </div>
   );
 }

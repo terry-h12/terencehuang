@@ -1,10 +1,8 @@
 export interface IProject {
-  website: string;
+  name: string;
+  website: string | null;
   gitHubRepo: string;
   backendRepo: string | null;
   devpost: string | null;
-  // frontendRepo: string | null;
-  
-  // singleRepo: string | null;
   type: "personal" | "group";
 }

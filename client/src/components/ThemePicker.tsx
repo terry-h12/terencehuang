@@ -23,7 +23,7 @@ const ThemePicker = () => {
 
   return (
     <button onClick={handleThemeChange} className="absolute bottom-5 right-5 h-10 w-18">
-      {theme === "dark" ? <LightModeIcon /> : <DarkModeIcon />}
+      {theme === "dark" ? <LightModeIcon fontSize="large" /> : <DarkModeIcon fontSize="large" />}
     </button>
   );
 }
