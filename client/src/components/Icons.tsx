@@ -6,6 +6,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import WebIcon from '@mui/icons-material/Web';
 import StorageIcon from '@mui/icons-material/Storage';
 import LogoDevIcon from '@mui/icons-material/LogoDev';
+import Tooltip from '@mui/material/Tooltip';
 
 export {DarkModeIcon, LightModeIcon, EmailIcon, LinkedInIcon, GitHubIcon};
 
@@ -30,7 +31,11 @@ export const LinkedIcon = ({ iconType, link }: LinkedIconProps) => {
 
   return (
     <a href={link} target="_blank" rel="noopener noreferrer">
-      <IconCompnent fontSize="large"/>
+      <Tooltip title={iconType}>
+        <div className="hover:scale-110">
+          <IconCompnent fontSize="large"/>
+        </div>
+      </Tooltip>
     </a>
   );
 }

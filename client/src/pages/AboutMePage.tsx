@@ -12,7 +12,7 @@ const AboutMePage = () => {
         My name is Terence Huang, a computer science student at UNSW.
         <br/>
         When I'm not on the computer, I'm probably eating or playing oztag 
-        <div>
+        <div className="flex">
           {/* put the links as constants */}
           <LinkedIcon iconType="email" link="mailto:terencehuang12@outlook.com"/>
           <LinkedIcon iconType="linkedIn" link="https://www.linkedin.com/in/terence-huang-8742981b8/"/>
