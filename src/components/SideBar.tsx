@@ -19,21 +19,33 @@ const SideBar = () => {
     <div className="flex flex-col w-40 absolute top-1/2 left-3 text-center -translate-y-1/2">
       <Link
         to="/"
-        className={`bg-dracula-purple mb-1 rounded-md ${currentPage === '/' ? '' : 'bg-opacity-50'}`}
+        className={`bg-dracula-purple mb-1.5 rounded-md ${
+          currentPage === '/'
+            ? ''
+            : 'bg-opacity-40 text-dracula-black dark:text-dracula-white text-opacity-40 dark:text-opacity-40'
+        }`}
         onClick={() => handlePageChange('/')}
       >
         Home page
       </Link>
       <Link
         to="/projects"
-        className={`bg-dracula-pink mb-1 rounded-md ${currentPage === '/projects' ? '' : 'bg-opacity-50'}`}
+        className={`bg-dracula-pink mb-1.5 rounded-md ${
+          currentPage === '/projects'
+            ? ''
+            : 'bg-opacity-40 text-dracula-black dark:text-dracula-white text-opacity-40 dark:text-opacity-40'
+        }`}
         onClick={() => handlePageChange('/projects')}
       >
         Projects
       </Link>
       <Link
         to="/aboutMe"
-        className={`bg-dracula-orange rounded-md ${currentPage === '/aboutMe' ? '' : 'bg-opacity-50'}`}
+        className={`bg-dracula-orange rounded-md ${
+          currentPage === '/aboutMe'
+            ? ''
+            : 'bg-opacity-40 text-dracula-black dark:text-dracula-white text-opacity-40 dark:text-opacity-40'
+        }`}
         onClick={() => handlePageChange('/aboutMe')}
       >
         About Me
