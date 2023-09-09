@@ -1,24 +1,35 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect  } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const SideBar = () => {
-  /*
-    - Have useState which keeps track of current page the user is on
-    - Once page is changed, first check the useState and change that button's     opacity
-    - Change the useState to new page and opacity
-  */
-  // const [currentPage, setCurrentPage] = useState<string>("Home");
+  // Provides access to the current location 
+  const location = useLocation();
+  const [currentPage, setCurrentPage] = useState<string>(location.pathname);
 
+  const handlePageChange = (page: string) => {
+    setCurrentPage(page);
+  }
+
+  // Each time the pathname changes, the useState is updated
+  useEffect(() => {
+    handlePageChange(location.pathname);
+  }, [location.pathname]);
 
   return (
     <div className="flex flex-col w-40 absolute top-1/2 left-3 text-center -translate-y-1/2">
-      <Link to="/" className="bg-dracula-purple mb-1 rounded-md">
+      <Link to="/" className={`bg-dracula-purple mb-1 rounded-md ${currentPage === "/" ? "" : "bg-opacity-50"}`}
+        onClick={() => handlePageChange("/")}
+      >
         Home page
       </Link>
-      <Link to="/projects" className="bg-dracula-pink mb-1 rounded-md bg-opacity-50">
+      <Link to="/projects" className={`bg-dracula-pink mb-1 rounded-md ${currentPage === "/projects" ? "" : "bg-opacity-50"}`}
+        onClick={() => handlePageChange("/projects")}
+      >
         Projects
       </Link>
-      <Link to="/aboutMe" className="bg-dracula-orange rounded-md bg-opacity-50">
+      <Link to="/aboutMe" className={`bg-dracula-orange rounded-md ${currentPage === "/aboutMe" ? "" : "bg-opacity-50"}`}
+        onClick={() => handlePageChange("/aboutMe")}
+      >
         About Me
       </Link>
     </div>
