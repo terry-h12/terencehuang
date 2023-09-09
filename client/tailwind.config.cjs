@@ -17,11 +17,10 @@ module.exports = {
         "dracula-pink" : "#ff79c6",
         "dracula-orange" : "#ffb86c",
         "dracula-green" : "#50fa7b",
-        "dracula-cyan" : "##8be9fd",
+        "dracula-cyan" : "#8be9fd",
       },
       margin: {
-        '40%': '40%',
-        '50%': '50%',
+        "40%": "40%",
       },
     },
   },

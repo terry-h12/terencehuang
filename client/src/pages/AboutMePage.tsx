@@ -5,10 +5,9 @@ import { LinkedIcon } from "../components/Icons";
 const AboutMePage = () => {
   return (
     <div className="w-screen h-screen bg-dracula-white text-2xl font-global text-dracula-black dark:bg-dracula-black dark:text-dracula-white">
-      About Me Page
       <SideBar />
       <ThemePicker />
-      <div className="m-auto w-96">
+      <div className="w-96 absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-3/4">
         My name is Terence Huang, a computer science student at UNSW.
         <br/>
         When I'm not on the computer, I'm probably eating or playing oztag 

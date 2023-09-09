@@ -8,11 +8,19 @@ interface ChildProps {
 const Project = (props: ChildProps) => {
   const { projectDetails } = props;
   return (
-    <div className="flex flex-col mb-5 text-xl ml-40%">
+    <div className="flex flex-col mb-5 text-xl">
       <div className="mb-2">
-        {projectDetails.name} | {projectDetails.type}
+        {projectDetails.name} {projectDetails.type === "group" ? 
+          <span className="inline-flex items-center rounded-md bg-dracula-green px-2 py-1 text-xs font-medium ring-1 ring-inset ring-green-600/20 text-dracula-black dark:text-dracula-white bg-opacity-90">
+            Group
+          </span>
+          : 
+          <span className="inline-flex items-center rounded-md bg-dracula-cyan px-2 py-1 text-xs font-medium ring-1 ring-inset ring-blue-700/10 text-dracula-black dark:text-dracula-white bg-opacity-90">
+            Personal
+          </span>
+          }
       </div>
-      <div className="flex space-x-10 > * w-max border border-white p-3 rounded-lg">
+      <div className="flex space-x-10 > * w-max border dark:border-white p-3 rounded-lg border-black">
         <LinkedIcon iconType="gitHub" link={projectDetails.gitHubRepo}/>
         <LinkedIcon iconType="backend" link={projectDetails.backendRepo}/>
         <LinkedIcon iconType="website" link={projectDetails.website}/>
