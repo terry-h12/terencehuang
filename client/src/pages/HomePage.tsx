@@ -1,5 +1,5 @@
-import SideBar from "../components/SideBar";
-import ThemePicker from "../components/ThemePicker";
+import SideBar from '../components/SideBar';
+import ThemePicker from '../components/ThemePicker';
 
 const HomePage = () => {
   return (
@@ -11,6 +11,6 @@ const HomePage = () => {
       </div>
     </div>
   );
-}
+};
 
 export default HomePage;

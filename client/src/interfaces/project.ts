@@ -4,5 +4,5 @@ export interface IProject {
   gitHubRepo: string;
   backendRepo: string | null;
   devpost: string | null;
-  type: "personal" | "group";
+  type: 'personal' | 'group';
 }

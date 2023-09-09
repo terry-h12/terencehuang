@@ -8,7 +8,7 @@ import StorageIcon from '@mui/icons-material/Storage';
 import LogoDevIcon from '@mui/icons-material/LogoDev';
 import Tooltip from '@mui/material/Tooltip';
 
-export {DarkModeIcon, LightModeIcon, EmailIcon, LinkedInIcon, GitHubIcon};
+export { DarkModeIcon, LightModeIcon, EmailIcon, LinkedInIcon, GitHubIcon };
 
 const iconMap: Record<string, any> = {
   linkedIn: LinkedInIcon,
@@ -16,12 +16,12 @@ const iconMap: Record<string, any> = {
   email: EmailIcon,
   website: WebIcon,
   backend: StorageIcon,
-  devpost: LogoDevIcon
-}
+  devpost: LogoDevIcon,
+};
 
 interface LinkedIconProps {
-  iconType: string,
-  link: string | null,
+  iconType: string;
+  link: string | null;
 }
 
 export const LinkedIcon = ({ iconType, link }: LinkedIconProps) => {
@@ -33,9 +33,9 @@ export const LinkedIcon = ({ iconType, link }: LinkedIconProps) => {
     <a href={link} target="_blank" rel="noopener noreferrer">
       <Tooltip title={iconType}>
         <div className="hover:scale-110">
-          <IconCompnent fontSize="large"/>
+          <IconCompnent fontSize="large" />
         </div>
       </Tooltip>
     </a>
   );
-}
+};
