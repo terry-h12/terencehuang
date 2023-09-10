@@ -53,3 +53,12 @@ export const database_management: IProject = {
   devpost: 'https://devpost.com/software/gorlvan-db',
   type: 'group',
 };
+
+export const personal_website: IProject = {
+  name: 'Personal website (The one you are on!)',
+  gitHubRepo: 'https://github.com/terry-h12/terencehuang',
+  backendRepo: null,
+  website: null,
+  devpost: null,
+  type: 'personal',
+};

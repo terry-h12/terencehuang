@@ -22,10 +22,10 @@ const Project = (props: ChildProps) => {
         )}
       </div>
       <div className="flex space-x-10 > * w-max border dark:border-white p-3 rounded-lg border-black">
-        <LinkedIcon iconType="gitHub" link={projectDetails.gitHubRepo} />
-        <LinkedIcon iconType="backend" link={projectDetails.backendRepo} />
-        <LinkedIcon iconType="website" link={projectDetails.website} />
-        <LinkedIcon iconType="devpost" link={projectDetails.devpost} />
+        <LinkedIcon iconType="gitHub" link={projectDetails.gitHubRepo} icon_size={40} />
+        <LinkedIcon iconType="backend" link={projectDetails.backendRepo} icon_size={40} />
+        <LinkedIcon iconType="website" link={projectDetails.website} icon_size={40} />
+        <LinkedIcon iconType="devpost" link={projectDetails.devpost} icon_size={40} />
       </div>
     </div>
   );

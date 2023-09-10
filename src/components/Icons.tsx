@@ -22,9 +22,10 @@ const iconMap: Record<string, any> = {
 interface LinkedIconProps {
   iconType: string;
   link: string | null;
+  icon_size: number;
 }
 
-export const LinkedIcon = ({ iconType, link }: LinkedIconProps) => {
+export const LinkedIcon = ({ iconType, link, icon_size }: LinkedIconProps) => {
   if (!link) return null;
   const IconCompnent = iconMap[iconType];
   if (!IconCompnent) return null;
@@ -33,7 +34,7 @@ export const LinkedIcon = ({ iconType, link }: LinkedIconProps) => {
     <a href={link} target="_blank" rel="noopener noreferrer">
       <Tooltip title={iconType}>
         <div className="hover:scale-110">
-          <IconCompnent fontSize="large" />
+          <IconCompnent style={{ fontSize: icon_size }} />
         </div>
       </Tooltip>
     </a>
